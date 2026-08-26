@@ -49,9 +49,9 @@ section {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(5, 5, 15, 0.6), rgba(5, 5, 15, 0.8)), url(images/hero-bg.jpg) no-repeat;
+    background: url(images/hussam.jpg) no-repeat;
     background-size: cover;
-    background-position: center 30%;
+    background-position: center;
     background-attachment: fixed;
 }
 
