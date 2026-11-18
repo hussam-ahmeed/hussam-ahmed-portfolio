@@ -28,8 +28,8 @@ A lightweight personal portfolio website built with HTML and CSS to present a ba
 Clone the repository:
 
 ```bash
-git clone https://github.com/hussam-ahmeed/Hussam-Ahmed.git
-cd Hussam-Ahmed
+git clone https://github.com/hussam-ahmeed/hussam-ahmed-portfolio.git
+cd hussam-ahmed-portfolio
 ```
 
 Open `index.html` in a browser, or start a local static server:
@@ -42,7 +42,7 @@ Then visit `http://localhost:8000`.
 
 ## Live demo
 
-[View the live site](https://hussam-ahmeed.github.io/Hussam-Ahmed/)
+[View the live site](https://hussam-ahmeed.github.io/hussam-ahmed-portfolio/)
 
 ## Planned improvements
 
