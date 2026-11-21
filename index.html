@@ -604,7 +604,11 @@ footer {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: 1fr; }
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-photo { display: none; }
+  .hero-photo {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+  }
   .github-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
 }
