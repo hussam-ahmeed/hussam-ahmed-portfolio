@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth; 
+    scroll-behavior: smooth;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
+/* ── Header ── */
 header {
     background-color: #f0f0f0;
     width: 100%;
@@ -17,10 +22,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 200px ;
+    padding: 10px 200px;
 }
 
-.logo{
+.logo {
     text-decoration: none;
     color: #3a6cf4;
     text-transform: uppercase;
@@ -28,7 +33,7 @@ header {
     font-size: 1.8em;
 }
 
-.navigation a{
+.navigation a {
     color: #3a6cf4;
     text-decoration: none;
     font-size: 1.1em;
@@ -36,22 +41,24 @@ header {
     padding-left: 30px;
 }
 
-.navigation a:hover{
+.navigation a:hover {
     color: #601cfc;
 }
 
+/* ── Sections ── */
 section {
     padding: 100px 200px;
 }
 
+/* ── Hero ── */
 .main {
     width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: url(images/hussam.jpg) no-repeat;
+    /* fixed parallax on desktop, scroll on mobile (see media query) */
+    background: url(images/hussam.jpg) no-repeat center center;
     background-size: cover;
-    background-position: center;
     background-attachment: fixed;
 }
 
@@ -102,10 +109,14 @@ section {
     font-size: 1.7em;
     padding-right: 30px;
     transition: 0.5s ease;
-    
 }
 
+.social-icons a:hover {
+    transform: scale(1.2);
+    opacity: 0.85;
+}
 
+/* ── Section titles ── */
 .title {
     display: flex;
     justify-content: center;
@@ -113,7 +124,6 @@ section {
     font-size: 2.2em;
     font-weight: 800;
     margin-bottom: 30px;
-    
 }
 
 .content {
@@ -123,10 +133,11 @@ section {
     flex-wrap: wrap;
 }
 
+/* ── Focus cards ── */
 .card {
     background-color: #fff;
     width: 21.25em;
-    box-shadow: 0 5px 25px rgba(1 1 1 / 10%);
+    box-shadow: 0 5px 25px rgba(0 0 0 / 10%);
     border-radius: 10px;
     padding: 25px;
     margin: 15px;
@@ -134,7 +145,7 @@ section {
 }
 
 .card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .card .icon {
@@ -147,25 +158,29 @@ section {
     text-align: center;
 }
 
-.info h3{
+.info h3 {
     color: #3a6cf4;
     font-size: 1.2em;
     font-weight: 700;
     margin: 10px;
 }
 
+/* ── Projects ── */
 .projects {
     background-color: #000016;
 }
 
-.projects .content{
+.projects .title {
+    color: #4e9eff;
+}
+
+.projects .content {
     margin-top: 30px;
 }
 
 .project-card {
     background-color: #fff;
     border: 1px solid #fff;
-    min-height: 14em;
     width: 23em;
     overflow: hidden;
     border-radius: 10px;
@@ -174,15 +189,26 @@ section {
 }
 
 .project-card:hover {
-   transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-.project-card:hover .project-image {
-    opacity: 0.5;
- }
+.project-card:hover .project-image img {
+    opacity: 0.75;
+}
 
-.project-image img{
+.project-image {
     width: 100%;
+    height: 170px;
+    overflow: hidden;
+    background-color: #111;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.4s ease;
 }
 
 .project-info {
@@ -191,27 +217,33 @@ section {
 
 .project-category {
     font-size: 0.8em;
-    color: #000;
+    color: #444;
+    line-height: 1.4;
 }
 
 .project-title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     text-transform: uppercase;
     font-weight: 800;
     margin-top: 10px;
+    gap: 8px;
 }
 
 .more-details {
     text-decoration: none;
     color: #3a6cf4;
+    white-space: nowrap;
+    font-size: 0.85em;
 }
 
 .more-details:hover {
     color: #601cfc;
 }
 
-.contact .icon{
+/* ── Contact ── */
+.contact .icon {
     font-size: 4.5em;
 }
 
@@ -221,14 +253,19 @@ section {
 
 .contact .info p {
     font-size: 1.5em;
+    overflow-wrap: anywhere;
 }
 
+/* ── Footer ── */
 .footer {
     background-color: #000016;
     color: #fff;
     padding: 2em;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 .footer-title {
@@ -243,94 +280,132 @@ section {
 .footer .social-icons a {
     color: #fff;
     font-size: 1.7em;
-    padding-right: 30px;
+    padding-right: 20px;
     transition: 0.6s ease;
-    
-}
-.social-icons a{
-    transform: scale(1.1);
-    
-    
 }
 
-@media (max-width:1023px){
-    header{
+/* ── Responsive: tablet ── */
+@media (max-width: 1023px) {
+    header {
         padding: 12px 20px;
     }
 
-    .navigation a{
+    .navigation a {
         padding-left: 10px;
     }
 
-    .title{
+    .title {
         font-size: 1.8em;
     }
 
-    section{
+    section {
         padding: 80px 20px;
     }
 
-    .main h2{
+    .main h2 {
         font-size: 1em;
     }
 
-    .main h3{
+    .main h3 {
         font-size: 1.6em;
     }
 
-    .content{
+    .content {
         flex-direction: column;
         align-items: center;
     }
-
 }
 
-@media (max-width:641px){
-    body{
+/* ── Responsive: mobile ── */
+@media (max-width: 641px) {
+    body {
         font-size: 12px;
     }
 
-    .main h2{
-        font-size: 0.8em;
-    }
-
-    .main h3{
-        font-size: 1.4em;
-    }
-}
-
-@media (max-width:300px){
-    body{
-        font-size: 10px;
-     
-    }
-}
-/* Mobile layout fixes */
-html,
-body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-@media (max-width: 641px) {
     header {
         padding: 10px 16px;
-        gap: 12px;
+        gap: 10px;
     }
-    .logo { font-size: 1.35rem; flex-shrink: 0; }
-    .navigation { display: flex; align-items: center; justify-content: flex-end; gap: 12px; min-width: 0; }
-    .navigation a { padding-left: 0; font-size: 0.85rem; white-space: nowrap; }
-    section { padding: 72px 16px; }
-    .main { min-height: 100svh; background-attachment: scroll; background-position: center; }
-    .main > div { width: 100%; }
-    .main h2 { font-size: 1rem; }
-    .main h2 span { font-size: clamp(2rem, 10vw, 3rem); line-height: 1.1; max-width: 100%; }
-    .main h3 { font-size: clamp(1rem, 4.8vw, 1.45rem); line-height: 1.35; letter-spacing: 0; }
-    .title { font-size: clamp(1.65rem, 8vw, 2.2rem); line-height: 1.2; }
-    .content { width: 100%; }
-    .card, .project-card { width: 100%; max-width: 23rem; margin: 12px 0; }
-    .project-title { align-items: flex-start; flex-direction: column; gap: 8px; }
-    .contact .info p { overflow-wrap: anywhere; font-size: 1.15em; }
-    .footer { align-items: center; flex-wrap: wrap; gap: 16px; padding: 1.5em 16px; }
-    .footer .social-icons a { padding-right: 14px; }
+
+    .logo {
+        font-size: 1.35rem;
+        flex-shrink: 0;
+    }
+
+    .navigation {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navigation a {
+        padding-left: 0;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
+    section {
+        padding: 72px 16px;
+    }
+
+    /* Fix: background-attachment:fixed breaks on iOS/Android */
+    .main {
+        min-height: 100svh;
+        background-attachment: scroll;
+        background-position: center top;
+    }
+
+    .main > div {
+        width: 100%;
+    }
+
+    .main h2 {
+        font-size: 1rem;
+    }
+
+    .main h2 span {
+        font-size: clamp(2rem, 10vw, 3rem);
+        line-height: 1.1;
+    }
+
+    .main h3 {
+        font-size: clamp(1rem, 4.8vw, 1.45rem);
+        line-height: 1.35;
+        letter-spacing: 0;
+    }
+
+    .title {
+        font-size: clamp(1.65rem, 8vw, 2.2rem);
+    }
+
+    .card,
+    .project-card {
+        width: 100%;
+        max-width: 23rem;
+        margin: 12px 0;
+    }
+
+    .project-image {
+        height: 140px;
+    }
+
+    .project-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .footer {
+        padding: 1.5em 16px;
+    }
+
+    .footer .social-icons a {
+        padding-right: 14px;
+    }
+}
+
+@media (max-width: 300px) {
+    body {
+        font-size: 10px;
+    }
 }
