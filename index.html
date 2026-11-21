@@ -1,7 +1,8 @@
-<title>Hussam Ahmed</title>
+<meta charset="UTF-8">
+<title>Hussam Ahmed | Cybersecurity Student</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Cybersecurity student — home-lab penetration testing, networking, and Python.">
+<meta name="description" content="Hussam Ahmed — Cybersecurity student focused on penetration testing, networking, Python, and documented home-lab projects.">
 <meta property="og:title" content="Hussam Ahmed | Cybersecurity Student">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -755,17 +756,118 @@ img {
     scroll-behavior: auto !important;
   }
 }
+
+/* ── Local motion preview: readability + touch polish ── */
+html { scroll-behavior: auto; }
+nav a, .theme-toggle { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+@media (max-width: 640px) {
+  .header-inner { gap: 8px; padding-inline: max(12px, env(safe-area-inset-left, 0px)); }
+  nav { gap: 0; }
+  nav a { padding-inline: 7px; font-size: .74rem; color: var(--fg); }
+  .hero-text { position: relative; z-index: 2; padding: 18px 16px; border: 1px solid color-mix(in srgb, var(--fg) 12%, transparent); border-radius: var(--radius); background: color-mix(in srgb, var(--bg) 78%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .hero-photo { position: relative; z-index: 2; }
+  .hero-bg { opacity: .72; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ── Local cyber motion preview ── */
+.hero::after {
+  content: ''; position: absolute; left: 0; right: 0; top: -2px; height: 2px;
+  z-index: 2; pointer-events: none; opacity: .65;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  transform: translateY(var(--scan-y, -20px));
+}
+.local-terminal-line {
+  display: inline-flex; align-items: center; gap: 5px; margin: 0 0 12px;
+  font: 600 .76rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--fg-muted); letter-spacing: .02em;
+}
+.local-terminal-line .prompt { color: var(--accent); }
+.local-terminal-line .typed { color: var(--fg); }
+.local-terminal-line .cursor { width: 7px; height: 15px; background: var(--accent); display: inline-block; }
+@media (max-width: 640px) {
+  .local-terminal-line { font-size: .68rem; }
+}
+
+/* ── Local identity + link polish preview ── */
+.logo { display: inline-flex; align-items: center; gap: 7px; }
+.logo i { color: var(--accent); font-size: .88em; }
+nav a { position: relative; }
+nav a::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 5px; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: center; transition: transform .25s ease; }
+nav a:hover::after, nav a.active::after { transform: scaleX(1); }
+nav a.active { color: var(--fg); }
+.opportunity-badge { display: inline-flex; align-items: center; gap: 8px; width: fit-content; margin: -4px 0 18px; padding: 6px 10px; border: 1px solid rgba(63,185,80,.45); border-radius: 999px; background: rgba(63,185,80,.10); color: var(--success); font: 600 .76rem/1.2 var(--font-body); }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--success); box-shadow: 0 0 0 0 rgba(63,185,80,.45); animation: local-status-pulse 2s infinite; }
+@keyframes local-status-pulse { 70% { box-shadow: 0 0 0 7px rgba(63,185,80,0); } 100% { box-shadow: 0 0 0 0 rgba(63,185,80,0); } }
+.btn-arrow { display: inline-block; margin-left: 4px; transition: transform .22s ease; }
+.btn-primary:hover .btn-arrow, .btn-outline:hover .btn-arrow { transform: translateX(4px); }
+.contact-value a { color: inherit; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+@media (max-width: 640px) {
+  .opportunity-badge { font-size: .68rem; margin-bottom: 14px; }
+  nav a::after { left: 7px; right: 7px; }
+}
+@media (prefers-reduced-motion: reduce) { .status-dot { animation: none; } .btn-arrow { transition: none; } }
+
+.nav-short { display: none; }
+@media (max-width: 640px) {
+  .nav-full { display: none; }
+  .nav-short { display: inline; }
+  .logo { font-size: .94rem; gap: 5px; }
+  nav a { padding-inline: 5px; font-size: .70rem; }
+}
+
+/* ── Local cursor + spotlight preview ── */
+.hero::before {
+  content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(260px circle at var(--spot-x, 72%) var(--spot-y, 45%), rgba(0,212,255,.13), transparent 72%);
+  opacity: .9;
+}
+.local-cursor-glow {
+  position: fixed; left: 0; top: 0; z-index: 9999; width: 22px; height: 22px; border-radius: 50%;
+  pointer-events: none; opacity: 0; transform: translate(-50%, -50%);
+  background: rgba(0,212,255,.20); border: 1px solid rgba(0,212,255,.7);
+  box-shadow: 0 0 18px rgba(0,212,255,.45), 0 0 42px rgba(0,212,255,.18);
+  mix-blend-mode: screen;
+}
+.local-cursor-glow.is-hovering { width: 34px; height: 34px; background: rgba(0,212,255,.12); }
+@media (prefers-reduced-motion: reduce) { .hero::before { display: none; } }
+
+/* ── Local complete polish preview ── */
+header nav a { color: var(--fg); }
+.theme-toggle { color: var(--fg); border-color: var(--border); }
+.hero::after { left: 56%; right: 0; z-index: 0; opacity: .32; }
+.hero-bg::after { background: linear-gradient(90deg, var(--bg) 40%, rgba(13,17,23,.76) 100%); }
+.experience-bg { background: var(--bg-2); }
+.practice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.practice-card { display: flex; align-items: flex-start; gap: 16px; padding: 22px; background: var(--bg-3); border: 1px solid var(--border); border-radius: var(--radius); transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition); }
+.practice-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 26px rgba(0,0,0,.22); }
+.practice-icon { width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center; color: var(--accent); border: 1px solid var(--accent); border-radius: var(--radius-sm); background: var(--accent-glow); }
+.practice-card h3 { font: 700 1rem/1.25 var(--font-head); margin-bottom: 6px; }
+.practice-card p { color: var(--fg-muted); font-size: .88rem; line-height: 1.55; margin-bottom: 10px; }
+.practice-meta { color: var(--accent); font: 600 .72rem/1.2 var(--font-body); }
+.project-card:focus-visible, .practice-card:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 55%, transparent); outline-offset: 3px; }
+.github-stat { min-height: 180px; background: linear-gradient(90deg, var(--bg-2) 25%, var(--bg-3) 37%, var(--bg-2) 63%); background-size: 400% 100%; }
+.github-stat.loaded { background: none; min-height: 0; }
+.github-profile-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; font-weight: 600; }
+@media (max-width: 760px) {
+  .practice-grid { grid-template-columns: 1fr; }
+  .hero-bg::after { background: linear-gradient(90deg, var(--bg) 34%, rgba(13,17,23,.84) 100%); }
+}
+@media (prefers-reduced-motion: reduce) { .practice-card { transition: none; } }
+
+@media (max-width: 640px) { nav a[href="#experience"] { display: none; } }
 </style>
 
 <!-- ── HEADER ── -->
 <header>
   <div class="header-inner">
-    <a href="#" class="logo">H<span>.</span>Ahmed</a>
+    <a href="#" class="logo"><i class="fas fa-shield-alt" aria-hidden="true"></i> H<span>.</span>Ahmed</a>
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
+      <a href="#experience"><span class="nav-full">Experience</span><span class="nav-short">Practice</span></a>
       <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact"><span class="nav-full">Let's Connect</span><span class="nav-short">Connect</span></a>
     </nav>
     <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
       <i class="fas fa-moon" id="themeIcon"></i>
@@ -779,11 +881,12 @@ img {
   <div class="hero-inner">
     <div class="hero-text reveal">
       <p class="hero-eyebrow">Cybersecurity Student</p>
+      <div class="opportunity-badge"><span class="status-dot" aria-hidden="true"></span> Open to cybersecurity opportunities</div>
       <h1>Building a career in<br><em>offensive security</em></h1>
       <p>Senior cybersecurity student at Sana'a University, focused on home-lab penetration testing, networking (CCNA), and Python scripting.</p>
       <div class="hero-actions">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#contact" class="btn-outline">Get in Touch</a>
+        <a href="#projects" class="btn-primary">View Projects <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
+        <a href="#contact" class="btn-outline">Get in Touch <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
       </div>
       <div class="hero-socials">
         <a href="https://www.linkedin.com/in/hussam-ahmeed-2a0654425" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -908,6 +1011,32 @@ img {
   </div>
 </section>
 
+<!-- ── EXPERIENCE & PRACTICE ── -->
+<section class="section experience-bg" id="experience">
+  <div class="container">
+    <div class="chip"><i class="fas fa-route"></i> Experience &amp; Practice</div>
+    <h2 class="section-title reveal">Learning <span>Journey</span></h2>
+    <p class="section-sub reveal">Hands-on practice, documented work, and continuous study</p>
+    <div class="practice-grid">
+      <article class="practice-card reveal">
+        <div class="practice-icon"><i class="fas fa-shield-alt"></i></div>
+        <div><h3>Home Lab Practice</h3><p>Reconnaissance, service enumeration, and validation inside an isolated Kali + Metasploitable2 lab.</p><span class="practice-meta">Nmap · Metasploit · Reporting</span></div>
+      </article>
+      <article class="practice-card reveal">
+        <div class="practice-icon"><i class="fas fa-network-wired"></i></div>
+        <div><h3>Networking Foundation</h3><p>Building practical understanding of routing, switching, VLANs, TCP/IP, and network troubleshooting.</p><span class="practice-meta">CCNA · VMware · Wireshark</span></div>
+      </article>
+      <article class="practice-card reveal">
+        <div class="practice-icon"><i class="fas fa-code"></i></div>
+        <div><h3>Python &amp; Testing</h3><p>Writing small console projects with object-oriented structure, input validation, and six passing unit tests.</p><span class="practice-meta">Python · OOP · unittest</span></div>
+      </article>
+      <article class="practice-card reveal">
+        <div class="practice-icon"><i class="fas fa-file-alt"></i></div>
+        <div><h3>Security Documentation</h3><p>Turning practical findings into clear README files with evidence, scope, risk context, and responsible notes.</p><span class="practice-meta">Evidence · README · Ethics</span></div>
+      </article>
+    </div>
+  </div>
+</section>
 <!-- ── CERTIFICATIONS ── -->
 <section class="section" id="certs">
   <div class="container">
@@ -954,7 +1083,7 @@ img {
     <p class="section-sub reveal">What I've built and documented</p>
     <div class="projects-grid">
 
-      <div class="project-card reveal">
+      <div class="project-card reveal" tabindex="0" role="link" data-project-url="https://github.com/hussam-ahmeed/kali-metasploitable-lab">
         <div class="project-img">
           <img src="images/project4.png?v=2" alt="Home Lab Pentesting" loading="lazy" />
         </div>
@@ -970,7 +1099,7 @@ img {
         </div>
       </div>
 
-      <div class="project-card reveal" style="transition-delay:.08s">
+      <div class="project-card reveal" style="transition-delay:.08s" tabindex="0" role="link" data-project-url="https://github.com/hussam-ahmeed/python-console-games">
         <div class="project-img">
           <img src="images/project6.png?v=2" alt="Python Console Games" loading="lazy" />
         </div>
@@ -986,7 +1115,7 @@ img {
         </div>
       </div>
 
-      <div class="project-card reveal" style="transition-delay:.16s">
+      <div class="project-card reveal" style="transition-delay:.16s" tabindex="0" role="link" data-project-url="https://github.com/hussam-ahmeed/hussam-ahmed-portfolio">
         <div class="project-img">
           <img src="images/project5.png?v=2" alt="Portfolio Website" loading="lazy" />
         </div>
@@ -1013,7 +1142,8 @@ img {
     <h2 class="section-title reveal">GitHub <span>Stats</span></h2>
     <p class="section-sub reveal">Auto-updated via github-readme-stats</p>
     <div class="github-grid">
-      <img class="reveal"
+      <img class="reveal github-stat"
+        onload="this.classList.add('loaded')"
         src="https://github-readme-stats.vercel.app/api?username=hussam-ahmeed&show_icons=true&theme=github_dark&hide_border=true&bg_color=161b22&title_color=00d4ff&icon_color=00d4ff&text_color=e6edf3"
         alt="Hussam's GitHub Stats"
         loading="lazy"
@@ -1039,7 +1169,7 @@ img {
       <div class="contact-card reveal">
         <div class="contact-icon"><i class="fas fa-envelope"></i></div>
         <div class="contact-label">Email</div>
-        <div class="contact-value">hussamahm39@gmail.com</div>
+        <div class="contact-value"><a href="mailto:hussamahm39@gmail.com">hussamahm39@gmail.com</a></div>
       </div>
       <div class="contact-card reveal" style="transition-delay:.08s">
         <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
@@ -1109,4 +1239,145 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+<!-- Progressive enhancement libraries -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.3.27/dist/lenis.min.js"></script>
+<script>
+(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || !window.gsap || !window.Lenis) return;
+  gsap.registerPlugin(ScrollTrigger);
+  const lenis = new Lenis({ autoRaf: false, anchors: true, lerp: 0.08, smoothWheel: true });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((time) => lenis.raf(time * 1000));
+  gsap.ticker.lagSmoothing(0);
+  gsap.fromTo('.hero-text', { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: .75, ease: 'power3.out' });
+  gsap.fromTo('.hero-photo', { opacity: 0, scale: .86 }, { opacity: 1, scale: 1, duration: .85, delay: .12, ease: 'back.out(1.35)' });
+  gsap.fromTo('.hero-actions a, .hero-socials a', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: .45, stagger: .06, delay: .28, ease: 'power2.out' });
+  gsap.utils.toArray('.project-card').forEach((card, index) => gsap.fromTo(card, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: .55, delay: index * .08, ease: 'power2.out', scrollTrigger: { trigger: card, start: 'top 86%', once: true } }));
+  gsap.utils.toArray('.section-title, .section-sub, .chip').forEach((el) => gsap.fromTo(el, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: .45, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 90%', once: true } }));
+})();
+</script>
+
+<script>
+(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || !window.gsap || !window.ScrollTrigger) return;
+
+  // Skills: three groups enter with a gentle alternating slide.
+  gsap.utils.toArray('.skill-group').forEach((group, index) => {
+    gsap.fromTo(group, { opacity: 0, x: index % 2 ? 24 : -24 }, {
+      opacity: 1, x: 0, duration: .6, delay: index * .08, ease: 'power2.out',
+      scrollTrigger: { trigger: group, start: 'top 88%', once: true }
+    });
+  });
+
+  // Certifications: timeline-like stagger from the right.
+  gsap.utils.toArray('.cert-card').forEach((card, index) => {
+    gsap.fromTo(card, { opacity: 0, x: 28 }, {
+      opacity: 1, x: 0, duration: .55, delay: index * .1, ease: 'power2.out',
+      scrollTrigger: { trigger: card, start: 'top 90%', once: true }
+    });
+  });
+
+  // Desktop-only micro interaction for skill chips; touch devices keep native behavior.
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.querySelectorAll('.skill-tag').forEach((tag) => {
+      tag.addEventListener('mouseenter', () => gsap.to(tag, { y: -3, scale: 1.03, duration: .18, ease: 'power2.out' }));
+      tag.addEventListener('mouseleave', () => gsap.to(tag, { y: 0, scale: 1, duration: .22, ease: 'power2.out' }));
+    });
+  }
+})();
+</script>
+
+<script>
+(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || !window.gsap) return;
+
+  const eyebrow = document.querySelector('.hero-eyebrow');
+  if (eyebrow && !document.querySelector('.local-terminal-line')) {
+    const line = document.createElement('div');
+    line.className = 'local-terminal-line';
+    line.innerHTML = '<span class="prompt">$</span><span class="typed"></span><span class="cursor"></span>';
+    eyebrow.insertAdjacentElement('afterend', line);
+    const output = { value: 0 };
+    const text = ' initializing secure portfolio...';
+    gsap.to(output, { value: text.length, duration: 1.25, delay: .25, ease: 'none', onUpdate: () => {
+      line.querySelector('.typed').textContent = text.slice(0, Math.floor(output.value));
+    }, onComplete: () => gsap.to(line.querySelector('.cursor'), { opacity: 0, repeat: 3, yoyo: true, duration: .18 }) });
+  }
+
+  // Quiet cybersecurity-style scan line across the hero.
+  gsap.to('.hero', { '--scan-y': '820px', duration: 3.8, repeat: -1, ease: 'none' });
+  // Pulse the avatar glow without changing its size or layout.
+  gsap.to('.avatar-ring', { boxShadow: '0 0 58px rgba(0, 212, 255, .34)', duration: 1.8, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+})();
+</script>
+
+<script>
+(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const links = [...document.querySelectorAll('header nav a[href^="#"]')];
+  const sections = links.map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const setActive = (id) => links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
+  if (sections.length) {
+    const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) setActive(entry.target.id); }), { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+    sections.forEach((section) => observer.observe(section));
+  }
+  if (!reduceMotion && window.gsap) {
+    gsap.fromTo('.opportunity-badge', { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: .45, delay: .2, ease: 'power2.out' });
+  }
+})();
+</script>
+
+<script>
+(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const touchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || window.innerWidth <= 640;
+  if (reduceMotion || !finePointer || touchDevice || !window.gsap) return;
+
+  const hero = document.querySelector('.hero');
+  if (!hero || document.querySelector('.local-cursor-glow')) return;
+  const glow = document.createElement('div');
+  glow.className = 'local-cursor-glow';
+  document.body.appendChild(glow);
+
+  const updateSpotX = gsap.quickTo(hero, '--spot-x', { duration: .35, ease: 'power3.out' });
+  const updateSpotY = gsap.quickTo(hero, '--spot-y', { duration: .35, ease: 'power3.out' });
+
+  window.addEventListener('pointermove', (event) => {
+    gsap.to(glow, { left: event.clientX, top: event.clientY, opacity: 1, duration: .22, ease: 'power3.out', overwrite: true });
+    const rect = hero.getBoundingClientRect();
+    if (event.clientY >= rect.top && event.clientY <= rect.bottom) {
+      updateSpotX(`${event.clientX - rect.left}px`);
+      updateSpotY(`${event.clientY - rect.top}px`);
+    }
+    const interactive = event.target.closest('a, button, .skill-tag, .project-card');
+    glow.classList.toggle('is-hovering', !!interactive);
+  });
+  window.addEventListener('pointerleave', () => gsap.to(glow, { opacity: 0, duration: .25 }));
+})();
+</script>
+
+<script>
+(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.project-card[data-project-url]').forEach((card) => {
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a')) return;
+      window.open(card.dataset.projectUrl, '_blank', 'noopener');
+    });
+    card.addEventListener('keydown', (event) => {
+      if ((event.key === 'Enter' || event.key === ' ') && !event.target.closest('a')) { event.preventDefault(); window.open(card.dataset.projectUrl, '_blank', 'noopener'); }
+    });
+  });
+  if (!reduceMotion && window.gsap && window.ScrollTrigger) {
+    gsap.utils.toArray('.practice-card').forEach((card, index) => gsap.fromTo(card, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .55, delay: index * .08, ease: 'power2.out', scrollTrigger: { trigger: card, start: 'top 90%', once: true } }));
+  }
+})();
 </script>
