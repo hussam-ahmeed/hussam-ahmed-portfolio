@@ -614,6 +614,27 @@ footer {
   .contact-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
+  .header-inner {
+    gap: 8px;
+    padding-inline: 12px;
+  }
+  .logo { font-size: 1rem; flex-shrink: 0; }
+  nav {
+    flex: 1;
+    justify-content: flex-end;
+    gap: 0;
+    min-width: 0;
+  }
+  nav a {
+    padding: 5px 5px;
+    font-size: 0.68rem;
+    white-space: nowrap;
+  }
+  .theme-toggle {
+    flex-shrink: 0;
+    padding: 4px 7px;
+    font-size: 0.85rem;
+  }
   .section { padding-block: 60px; }
   .skills-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
