@@ -305,3 +305,32 @@ section {
      
     }
 }
+/* Mobile layout fixes */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+@media (max-width: 641px) {
+    header {
+        padding: 10px 16px;
+        gap: 12px;
+    }
+    .logo { font-size: 1.35rem; flex-shrink: 0; }
+    .navigation { display: flex; align-items: center; justify-content: flex-end; gap: 12px; min-width: 0; }
+    .navigation a { padding-left: 0; font-size: 0.85rem; white-space: nowrap; }
+    section { padding: 72px 16px; }
+    .main { min-height: 100svh; background-attachment: scroll; background-position: center; }
+    .main > div { width: 100%; }
+    .main h2 { font-size: 1rem; }
+    .main h2 span { font-size: clamp(2rem, 10vw, 3rem); line-height: 1.1; max-width: 100%; }
+    .main h3 { font-size: clamp(1rem, 4.8vw, 1.45rem); line-height: 1.35; letter-spacing: 0; }
+    .title { font-size: clamp(1.65rem, 8vw, 2.2rem); line-height: 1.2; }
+    .content { width: 100%; }
+    .card, .project-card { width: 100%; max-width: 23rem; margin: 12px 0; }
+    .project-title { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .contact .info p { overflow-wrap: anywhere; font-size: 1.15em; }
+    .footer { align-items: center; flex-wrap: wrap; gap: 16px; padding: 1.5em 16px; }
+    .footer .social-icons a { padding-right: 14px; }
+}
