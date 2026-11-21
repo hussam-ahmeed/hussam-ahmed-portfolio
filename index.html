@@ -643,6 +643,118 @@ footer {
   .hero h1 { font-size: 2rem; }
   .contact-grid { grid-template-columns: 1fr; }
 }
+/* ── UI/UX Pro Max v2 refinements ── */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --focus-ring: 3px solid var(--accent);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+:where(a, button):focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.theme-toggle {
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+.avatar-ring {
+  width: clamp(160px, 22vw, 220px);
+  aspect-ratio: 1;
+  height: auto;
+  border-radius: 50%;
+}
+
+.avatar-ring img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+@media (max-width: 900px) {
+  .hero-photo {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-5);
+  }
+}
+
+@media (max-width: 600px) {
+  header { padding-top: env(safe-area-inset-top, 0px); }
+  .header-inner {
+    gap: var(--space-2);
+    min-width: 0;
+    padding-inline: max(var(--space-3), env(safe-area-inset-left, 0px));
+  }
+  .logo { font-size: 1rem; flex-shrink: 0; }
+  nav {
+    flex: 1;
+    min-width: 0;
+    justify-content: flex-end;
+    gap: 0;
+  }
+  nav a {
+    padding: 8px 5px;
+    font-size: 0.68rem;
+    white-space: nowrap;
+  }
+  .theme-toggle { flex-shrink: 0; }
+  .hero {
+    min-height: 100svh;
+    padding-top: calc(60px + env(safe-area-inset-top, 0px));
+  }
+  .hero-inner {
+    gap: var(--space-5);
+    padding-inline: var(--space-4);
+    padding-block: var(--space-6) 48px;
+  }
+  .hero h1 { font-size: clamp(2rem, 9vw, 2.5rem); line-height: 1.12; }
+  .hero p { font-size: 1rem; line-height: 1.6; }
+  .hero-actions { gap: var(--space-3); }
+  .hero-actions a { min-height: 44px; display: inline-flex; align-items: center; }
+  .hero-photo { margin-top: 0; }
+  .avatar-ring { width: min(160px, 46vw); }
+  .section { padding-inline: var(--space-4); }
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+  .hero { min-height: auto; }
+  .hero-inner { padding-block: 96px 48px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 </style>
 
 <!-- ── HEADER ── -->
